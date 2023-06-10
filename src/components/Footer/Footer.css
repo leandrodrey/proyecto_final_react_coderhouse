@@ -28,4 +28,8 @@
     .footer_content__menu {
         display: none;
     }
+
+    .footer_content {
+        justify-content: center;
+    }
 }

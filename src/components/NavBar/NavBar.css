@@ -2,3 +2,17 @@
     width: 7rem;
     margin: 0 1.5rem 0 0;
 }
+
+.site_title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 2rem 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .site_title {
+        text-align: center;
+    }
+
+}

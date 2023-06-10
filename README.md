@@ -9,9 +9,9 @@
 <h3>Description</h2>
 <p>Formato: Link a repositorio de git donde se cumplan los objetivos + GIF/Video mostrando la navegabilidad y los flujos básicos de la aplicación y los que el alumno/a considere importantes a remarcar.</p>
 
-<p>Desarrollarás una app de un e-commerce para poder vender productos de un rubro a elección</p>
+<p>Desarrollarás una app de un e-commerce para poder vender productos de un rubro a elección.</p>
 
-<p>Componentets:</p>
+<p>Componentes:</p>
 <ul>
     <li>Navbar
     <li>Catálogo</li>

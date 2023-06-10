@@ -73,18 +73,20 @@
 
 <h2>How to run this project</h2>
 1. Clone this repository
+
 ```bash
 git clone https://github.com/leandrodrey/proyecto_final_react_coderhouse.git
 ```
 2. Install dependencies
+
 ```bash
 npm install
 ```
 3. Run the project
+
 ```bash
 npm start
 ```
-
 
 <h2>More Information</h2>
 <ul>

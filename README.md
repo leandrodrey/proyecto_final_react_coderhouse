@@ -60,7 +60,7 @@
     <img alt="Firebase" src="https://img.shields.io/badge/Firebase-blue?style=for-the-badge&logo=firebase&logoColor=white">
 </a>
 
-<h2>Tools used in this project</h2>
+<h2>Tools used in this project:</h2>
 <a target="_blank" href="https://mui.com/">
     <img alt="Material UI" src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white">
 </a> 
@@ -72,16 +72,19 @@
 </a>
 
 <h2>How to run this project</h2>
+
 1. Clone this repository
 
 ```bash
 git clone https://github.com/leandrodrey/proyecto_final_react_coderhouse.git
 ```
+
 2. Install dependencies
 
 ```bash
 npm install
 ```
+
 3. Run the project
 
 ```bash
@@ -89,7 +92,9 @@ npm start
 ```
 
 <h2>More Information</h2>
+
 <ul>
+  <li>The development come from this branch if you want to see the history: https://github.com/leandrodrey/PreEntrega2Rey/tree/NewDev</li>
   <li>📚 <a target="_blank" href="https://www.coderhouse.com/online/reactjs">Course web page</a></li>
   <li>🖍 <a target="_blank" href="https://drive.google.com/file/d/1G_SRPkYExFpTkmOvbEwj985rIgQ62kx9/view">Study Plan</a></li>
 </ul>

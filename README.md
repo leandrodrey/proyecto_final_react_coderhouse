@@ -1,53 +1,58 @@
 <div align="center"> 
   <img widht="150px" height="150px" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" />
   <h1>React Course from <a target="_blank" href="https://www.coderhouse.com">Coderhouse</a></h1>
-  <p>Repository for the second presentation of the final project.</p>
+  <p>Final project repository.</p>
   <a href="https://pre-entrega2-rey-due5.vercel.app/" taget="_blank">Project Demo!</a>
 </div>
 
 <h2>E-commerce</h2>
 <h3>Description</h2>
-<p>Configura en App.js el routing usando un BrowserRouter de tu aplicación con react-router-dom</p>
-<p>Componentes:</p>
+<p>Formato: Link a repositorio de git donde se cumplan los objetivos + GIF/Video mostrando la navegabilidad y los flujos básicos de la aplicación y los que el alumno/a considere importantes a remarcar.</p>
+
+<p>Desarrollarás una app de un e-commerce para poder vender productos de un rubro a elección</p>
+
+<p>Componentets:</p>
 <ul>
-    <li>Navbar con cart</li>
+    <li>Navbar
     <li>Catálogo</li>
     <li>Detalle de producto</li>
+    <li>CartContext</li>
+    <li>CartWidget</li>
 </ul>
 
 <h3>Description</h2>
 <p>Se debe entregar:</p>
 
 <ul>
-    <li>
-        <p>Rutas a configurar</p>
-        <ul>
-            <li>‘/’ navega a ItemListContainer /></li>
-            <li>‘/category/:id’  ItemListContainer /></li>
-            <li>‘/item/:id’ navega a ItemDetailContainer /></li>
-        </ul>
-    </li>
+  <li>NavBar</li>
+  <li>CartWidget</li>
+  <li>ItemListContainer</li>
+  <li>ItemList</li>
+  <li>ItemDetailContainer</li>
+  <li>ItemDetail
+    <ul>
+      <li>ItemQuantitySelector</li>
+      <li>Description</li>
+      <li>AddItemButton</li>
+    </ul>
+  </li>
+  <li>Checkout
+    <ul>
+        <li>Brief (detalle de compra)</li>
+    </ul>
+  </li>
 </ul>
 
-<ul>
-    <li>
-        <p>Links a configurar</p>
-        <ul>
-            <li>Clickear en el brand debe navegar a ‘/’</li>
-            <li>Clickear un Item.js debe navegar a /item/:id</li>
-            <li>Clickear en una categoría del navbar debe navegar a /category/:categoryId</li>
-        </ul>
-    </li>
-</ul>
-
-<p>Para finalizar deberá integrar los parámetros de tus async-mocks para reaccionar a :itemId y :categoryId ¡utilizando efectos y los hooks de parámetros que vimos en clase! Si te encuentras en una categoría deberías poder detectar la navegación a otra categoría y volver a cargar los productos que correspondan a dicha categoría.</p>
-
-<h4>Notas:</h4>
- <ul>
-    <li>No usar HashRouter como en el ejemplo del gif (usar BrowserRouter)</li>
-    <li>Utilizar el id de la categoría como nombre en la URL param en vez de números (vehículos, por ej)</li>
-    <li>Utilizar el id del item como URL param</li>
-</ul>
+<h2>Applied in this project:</h2>
+<a target="_blank" href="https://es.react.dev/">
+  <img src="https://img.shields.io/badge/React JS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+</a>
+<a target="_blank" href="">
+    <img alt="Context" src="https://img.shields.io/badge/Contexts-007FFF?style=for-the-badge&logo=react&logoColor=white">
+</a> 
+<a target="_blank" href="http://">
+    <img alt="React Router DOM" src="https://img.shields.io/badge/React Router dom-green?style=for-the-badge&logo=npm&logoColor=white">
+</a>
 
 <h2>Tools used in this project</h2>
 <a target="_blank" href="https://mui.com/">
@@ -56,8 +61,8 @@
 <a target="_blank" href="https://mui.com/material-ui/material-icons/">
     <img alt="Material UI" src="https://img.shields.io/badge/Material Icons-4e56a6?style=for-the-badge&logo=mui&logoColor=white">
 </a>
-<a target="_blank" href="http://">
-    <img alt="React Router DOM" src="https://img.shields.io/badge/React Router dom-green?style=for-the-badge&logo=npm&logoColor=white">
+<a target="_blank" href="https://www.jetbrains.com/idea/">
+    <img height="30px" src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white"/>
 </a>
 
 <h2>More Information</h2>

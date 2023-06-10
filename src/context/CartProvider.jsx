@@ -60,12 +60,12 @@ const CartProvider = ({children}) => {
 
     return (
         <CartContext.Provider value={{cart, setCart, addCart, getTotalPaymentFromCart, removeItemFromCart, removeAllItemsFromCart}}>
+            {children}
             <Snackbar open={showAddedToCartMessage} autoHideDuration={1000} onClose={hideAddedToCartMessage} TransitionComponent={Slide} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
                 <Alert onClose={hideAddedToCartMessage} severity="success">
                     Product added to cart!
                 </Alert>
             </Snackbar>
-            {children}
         </CartContext.Provider>
     )
 

@@ -62,7 +62,7 @@ const Form = () => {
         return (
             <div>
                 <h1>Thank you for your purchase!</h1>
-                <p>Your order number is: {order.id}</p>
+                <p>If you have any questions or need further assistance, please don't hesitate to reach out.</p>
             </div>
         )
     }

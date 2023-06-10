@@ -1,0 +1,25 @@
+.footer_container {
+    flex-shrink: 0;
+    margin: 2rem 0 0 0;
+}
+
+.footer_content {
+    padding: 2rem;
+    display: flex;
+    background-color: #3f50b5;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_content__text {
+}
+
+.footer_content__menu {
+
+}
+
+.footer_content__menu_button {
+    color: #fff;
+    margin: 0 0.5rem;
+}

@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 import {InputAdornment, TextField} from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import {LoaderContext} from "../../context/LoaderProvider";
-import {OrderContext} from "../../context/OrderProvider";
 import Loader from "../Loader/Loader";
 import {ProductContext} from "../../context/ProductProvider";
 import {CartContext} from "../../context/CartProvider";
@@ -18,7 +17,7 @@ const Form = () => {
     const {handleSubmit} = useContext(ProductContext);
     const {cart, getTotalPaymentFromCart, removeAllItemsFromCart} = useContext(CartContext);
     const {isLoading, stopLoader} = useContext(LoaderContext);
-    const {order} = useContext(OrderContext);
+    const [order, setOrder] = useState(null);
 
     const [form, setForm] = useState({
         buyer: {
@@ -48,8 +47,7 @@ const Form = () => {
 
     const handleSubmitForm = (e) => {
         e.preventDefault();
-        handleSubmit(form);
-        //setOrder(handleSubmit(form));
+        setOrder(handleSubmit(form));
         removeAllItemsFromCart();
     }
 
@@ -60,6 +58,7 @@ const Form = () => {
     }
 
     if (order) {
+        console.log(order, "order");
         return (
             <div>
                 <h1>Thank you for your purchase!</h1>
@@ -139,7 +138,7 @@ const Form = () => {
                         ),
                     }}
                 />
-                <Button type="submit" variant="contained" endIcon={<SendIcon/>}>Complete Order</Button>
+                <Button disabled={cart.length === 0} type="submit" variant="contained" endIcon={<SendIcon/>}>Complete Order</Button>
             </form>
         </>
     )

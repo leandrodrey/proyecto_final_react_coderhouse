@@ -3,7 +3,6 @@ import SiteRoutes from "./routes/SiteRoutes";
 import CartProvider from "./context/CartProvider";
 import ProductProvider from "./context/ProductProvider";
 import LoaderProvider from "./context/LoaderProvider";
-import OrderProvider from "./context/OrderProvider";
 
 function App() {
     return (
@@ -11,9 +10,7 @@ function App() {
             <LoaderProvider>
                 <ProductProvider>
                     <CartProvider>
-                        <OrderProvider>
-                            <SiteRoutes/>
-                        </OrderProvider>
+                        <SiteRoutes/>
                     </CartProvider>
                 </ProductProvider>
             </LoaderProvider>

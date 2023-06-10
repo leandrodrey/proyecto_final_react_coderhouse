@@ -8,7 +8,6 @@ const UseFirebase = () => {
     const {startLoader, stopLoader} = useContext(LoaderContext);
     const [products, setProducts] = useState([]);
     const [product, setProduct] = useState(null);
-    const [order, setOrder] = useState(null);
 
     const getProducts = async () => {
         startLoader();
@@ -56,8 +55,7 @@ const UseFirebase = () => {
         startLoader();
         try {
             const col = collection(db,"orders");
-            const newOrder  = await addDoc(col, form);
-            setOrder(newOrder);
+            return await addDoc(col, form);
         } catch (error) {
             console.log(error);
         } finally {
@@ -71,9 +69,7 @@ const UseFirebase = () => {
         products,
         getProductById,
         product,
-        handleSubmit,
-        order,
-        setOrder
+        handleSubmit
     }
 }
 export default UseFirebase;

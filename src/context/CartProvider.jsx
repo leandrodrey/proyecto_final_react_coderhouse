@@ -1,11 +1,13 @@
 import React, {createContext, useEffect, useState} from 'react';
 import {getCartFromSessionStorage, saveCartInSessionStorage} from "../helpers/SessionStorage";
+import {Alert, Slide, Snackbar} from "@mui/material";
 
 export const CartContext = createContext('')
 
 const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
+    const [showAddedToCartMessage, setShowAddedToCartMessage] = useState(false);
 
     useEffect(() => {
         getCartFromSessionStorage('cart') && setCart(getCartFromSessionStorage('cart'));
@@ -20,6 +22,7 @@ const CartProvider = ({children}) => {
         }
         setCart(localCart);
         saveCartInSessionStorage('cart', localCart);
+        setShowAddedToCartMessage(true);
     };
 
     const updatedCart = (item) => cart.map((cartItem) => {
@@ -51,8 +54,17 @@ const CartProvider = ({children}) => {
         saveCartInSessionStorage('cart', []);
     }
 
+    const hideAddedToCartMessage = () => {
+        setShowAddedToCartMessage(false);
+    };
+
     return (
         <CartContext.Provider value={{cart, setCart, addCart, getTotalPaymentFromCart, removeItemFromCart, removeAllItemsFromCart}}>
+            <Snackbar open={showAddedToCartMessage} autoHideDuration={1000} onClose={hideAddedToCartMessage} TransitionComponent={Slide} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
+                <Alert onClose={hideAddedToCartMessage} severity="success">
+                    Product added to cart!
+                </Alert>
+            </Snackbar>
             {children}
         </CartContext.Provider>
     )

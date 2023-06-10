@@ -1,11 +1,11 @@
 <div align="center"> 
   <img widht="150px" height="150px" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" />
   <h1>React Course from <a target="_blank" href="https://www.coderhouse.com">Coderhouse</a></h1>
-  <p>Final project repository.</p>
-  <a href="https://pre-entrega2-rey-due5.vercel.app/" taget="_blank">Project Demo!</a>
+  <h3>Final project repository.</h3>
+  <h3><a href="https://pre-entrega2-rey-due5.vercel.app/" taget="_blank">Project Demo!</a></h3>
 </div>
 
-<h2>E-commerce</h2>
+<h2>E-commerce: Overlord Store!</h2>
 <h3>Description</h2>
 <p>Formato: Link a repositorio de git donde se cumplan los objetivos + GIF/Video mostrando la navegabilidad y los flujos básicos de la aplicación y los que el alumno/a considere importantes a remarcar.</p>
 

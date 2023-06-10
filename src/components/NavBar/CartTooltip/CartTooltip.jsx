@@ -3,10 +3,15 @@ import Typography from "@mui/material/Typography";
 import {CartContext} from "../../../context/CartProvider";
 import "./CartTooltip.css"
 import {Paper} from "@mui/material";
+import Button from "@mui/material/Button";
+import {useNavigate} from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SendIcon from "@mui/icons-material/Send";
 
 const CartTooltip = () => {
 
     const {cart, getTotalPaymentFromCart} = useContext(CartContext);
+    const navigate = useNavigate();
 
     return (
         <>
@@ -29,6 +34,7 @@ const CartTooltip = () => {
                 <Typography variant="h6" gutterBottom color="text.secondary">
                     Total: ${getTotalPaymentFromCart()}
                 </Typography>
+                <Button className="button_checkout" onClick={()=>navigate(`/cart`)} variant="contained" color="primary" color="success" endIcon={<SendIcon />} disableElevation>Checkout</Button>
             </Paper>
         </>
     )

@@ -3,16 +3,17 @@ import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './CartWidget.css';
-import {useNavigate} from "react-router-dom";
 import {CartContext} from "../../../context/CartProvider";
 import {styled, Zoom} from "@mui/material";
 import Tooltip, {tooltipClasses} from "@mui/material/Tooltip";
 import CartTooltip from "../CartTooltip/CartTooltip";
+import {useLocation} from "react-router-dom";
 
 const CartWidget = () => {
 
-    const navigate = useNavigate();
     const {cart} = useContext(CartContext);
+    const location = useLocation();
+    const isOnCartPage = location.pathname === '/cart';
 
     const HtmlTooltip = styled(({ className, ...props }) => (
         <Tooltip {...props} classes={{ popper: className }} />
@@ -27,21 +28,27 @@ const CartWidget = () => {
 
     return (
         <React.Fragment>
-            <IconButton onClick={()=>navigate(`/cart`)} aria-label="shopping cart button">
-                <HtmlTooltip
-                    TransitionComponent={Zoom}
-                    TransitionProps={{ timeout: 600 }}
-                    title={
-                        (cart.length > 0) &&
-                        <React.Fragment>
-                            <CartTooltip />
-                        </React.Fragment>
-                    }
-                >
+            <IconButton aria-label="shopping cart button">
+                { isOnCartPage ?
                     <Badge className="shopping-cart__badge" badgeContent={cart.length} max={999}>
                         <ShoppingCartIcon className="shopping-cart__icon" />
                     </Badge>
-                </HtmlTooltip>
+                :
+                    <HtmlTooltip
+                        TransitionComponent={Zoom}
+                        TransitionProps={{ timeout: 600 }}
+                        title={
+                            (cart.length > 0) &&
+                            <React.Fragment>
+                                <CartTooltip />
+                            </React.Fragment>
+                        }
+                    >
+                        <Badge className="shopping-cart__badge" badgeContent={cart.length} max={999}>
+                            <ShoppingCartIcon className="shopping-cart__icon" />
+                        </Badge>
+                    </HtmlTooltip>
+                }
             </IconButton>
         </React.Fragment>
     )

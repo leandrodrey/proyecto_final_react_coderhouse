@@ -47,11 +47,17 @@
 <a target="_blank" href="https://es.react.dev/">
   <img src="https://img.shields.io/badge/React JS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
 </a>
-<a target="_blank" href="">
+<a target="_blank" href="https://react.dev/learn/reusing-logic-with-custom-hooks#custom-hooks-sharing-logic-between-components">
+    <img alt="Custom Hooks" src="https://img.shields.io/badge/Custom Hooks-007FGF?style=for-the-badge&logo=react&logoColor=white">
+</a>
+<a target="_blank" href="https://react.dev/reference/react/createContext">
     <img alt="Context" src="https://img.shields.io/badge/Contexts-007FFF?style=for-the-badge&logo=react&logoColor=white">
-</a> 
-<a target="_blank" href="http://">
+</a>
+<a target="_blank" href="https://www.npmjs.com/package/react-router-dom">
     <img alt="React Router DOM" src="https://img.shields.io/badge/React Router dom-green?style=for-the-badge&logo=npm&logoColor=white">
+</a>
+<a target="_blank" href="https://firebase.google.com/">
+    <img alt="Firebase" src="https://img.shields.io/badge/Firebase-blue?style=for-the-badge&logo=firebase&logoColor=white">
 </a>
 
 <h2>Tools used in this project</h2>
@@ -64,6 +70,21 @@
 <a target="_blank" href="https://www.jetbrains.com/idea/">
     <img height="30px" src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white"/>
 </a>
+
+<h2>How to run this project</h2>
+1. Clone this repository
+```bash
+git clone https://github.com/leandrodrey/proyecto_final_react_coderhouse.git
+```
+2. Install dependencies
+```bash
+npm install
+```
+3. Run the project
+```bash
+npm start
+```
+
 
 <h2>More Information</h2>
 <ul>

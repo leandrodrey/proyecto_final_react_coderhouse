@@ -15,12 +15,7 @@ const Footer = ({menuItems}) => {
                 <Paper className="footer_content" elevation={5}>
                     <div className="footer_content__text">Copyright &copy; 2023 - Overlord Store</div>
 
-                    <Stack className="footer_content__menu"
-                        direction="row"
-                        justifyContent="flex-end"
-                        alignItems="center"
-                        spacing={2}
-                    >
+                    <Stack className="footer_content__menu">
                         {menuItems.map(({name, path, icon}) => (
                             <React.Fragment key={name}>
                                 <Button

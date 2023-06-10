@@ -7,11 +7,12 @@ import {CartContext} from "../../../context/CartProvider";
 import {styled, Zoom} from "@mui/material";
 import Tooltip, {tooltipClasses} from "@mui/material/Tooltip";
 import CartTooltip from "../CartTooltip/CartTooltip";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const CartWidget = () => {
 
     const {cart} = useContext(CartContext);
+    const navigate = useNavigate();
     const location = useLocation();
     const isOnCartPage = location.pathname === '/cart';
 
@@ -28,7 +29,7 @@ const CartWidget = () => {
 
     return (
         <React.Fragment>
-            <IconButton aria-label="shopping cart button">
+            <IconButton onClick={()=>navigate(`/cart`)} aria-label="shopping cart button">
                 { isOnCartPage ?
                     <Badge className="shopping-cart__badge" badgeContent={cart.length} max={999}>
                         <ShoppingCartIcon className="shopping-cart__icon" />

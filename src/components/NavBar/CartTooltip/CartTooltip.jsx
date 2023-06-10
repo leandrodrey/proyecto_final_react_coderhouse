@@ -5,7 +5,6 @@ import "./CartTooltip.css"
 import {Paper} from "@mui/material";
 import Button from "@mui/material/Button";
 import {useNavigate} from "react-router-dom";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SendIcon from "@mui/icons-material/Send";
 
 const CartTooltip = () => {

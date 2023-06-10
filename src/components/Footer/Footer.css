@@ -12,9 +12,6 @@
     align-items: center;
 }
 
-.footer_content__text {
-}
-
 .footer_content__menu {
     display: flex;
     flex-direction: row;

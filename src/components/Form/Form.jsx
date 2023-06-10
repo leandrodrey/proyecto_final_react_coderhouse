@@ -58,7 +58,6 @@ const Form = () => {
     }
 
     if (order) {
-        console.log(order, "order");
         return (
             <div>
                 <h1>Thank you for your purchase!</h1>

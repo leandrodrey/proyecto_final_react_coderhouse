@@ -1,8 +1,8 @@
 <div align="center"> 
-  <img widht="150px" height="150px" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" />
+  <img alt="Logo React" width="150px" height="150px" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" />
   <h1>React Course from <a target="_blank" href="https://www.coderhouse.com">Coderhouse</a></h1>
   <h3>Final project repository.</h3>
-  <h3><a href="https://proyecto-final-react-coderhouse-leandrodrey.vercel.app/" taget="_blank">Project Demo!</a></h3>
+  <h3><a href="https://proyecto-final-react-coderhouse-leandrodrey.vercel.app/" target="_blank">Project Demo!</a></h3>
 </div>
 
 <h2>E-commerce: Overlord Store!</h2>

@@ -29,6 +29,6 @@
 
 @media only screen and (max-width: 600px) {
     .footer_content__menu {
-        flex-direction: column;
+        display: none;
     }
 }

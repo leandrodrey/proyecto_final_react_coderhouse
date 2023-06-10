@@ -2,7 +2,7 @@ import React from 'react'
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Form from "../components/Form/Form";
-import CartItemsTable from "../CartItemsTable/CartItemsTable";
+import CartItemsTable from "../components/CartItemsTable/CartItemsTable";
 import Container from "@mui/material/Container";
 
 const Cart = () => {

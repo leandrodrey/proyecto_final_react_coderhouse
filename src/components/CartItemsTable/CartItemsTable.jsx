@@ -9,7 +9,7 @@ import TableBody from "@mui/material/TableBody";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Typography from "@mui/material/Typography";
-import {CartContext} from "../context/CartProvider";
+import {CartContext} from "../../context/CartProvider";
 import './CartItemTable.css';
 
 const CartItemsTable = () => {

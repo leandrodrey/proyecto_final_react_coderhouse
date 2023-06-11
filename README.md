@@ -1,8 +1,8 @@
 <div align="center"> 
   <img alt="Logo React" width="150px" height="150px" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" />
   <h1>React Course from <a target="_blank" href="https://www.coderhouse.com">Coderhouse</a></h1>
-  <h3>Final project repository.</h3>
-  <h3><a href="https://proyecto-final-react-coderhouse-leandrodrey.vercel.app/" target="_blank">Project Demo!</a></h3>
+  <p>Final project repository.<p>
+  <h2><a href="https://proyecto-final-react-coderhouse-leandrodrey.vercel.app/" target="_blank">Project Demo!</a></h2>
 </div>
 
 <h2>E-commerce: Overlord Store!</h2>
@@ -52,6 +52,9 @@
 </a>
 <a target="_blank" href="https://react.dev/reference/react/createContext">
     <img alt="Context" src="https://img.shields.io/badge/Contexts-007FFF?style=for-the-badge&logo=react&logoColor=white">
+</a>
+<a target="_blank" href="">
+    <img alt="Session Storage" src="https://img.shields.io/badge/Session Storage-000FGF?style=for-the-badge&logo=chrome&logoColor=white">
 </a>
 <a target="_blank" href="https://www.npmjs.com/package/react-router-dom">
     <img alt="React Router DOM" src="https://img.shields.io/badge/React Router dom-green?style=for-the-badge&logo=npm&logoColor=white">

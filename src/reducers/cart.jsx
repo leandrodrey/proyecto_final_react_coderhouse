@@ -8,7 +8,7 @@ export const CART_ACTION_TYPES = {
     REMOVE_ALL_ITEMS_FROM_CART: 'REMOVE_ALL_ITEMS_FROM_CART'
 };
 
-export const cartReducer = (state, action) => {
+const cartReducer = (state, action) => {
 
     const {type: actionType, payload: actionPayload} = action;
 
@@ -23,11 +23,9 @@ export const cartReducer = (state, action) => {
                 }
                 return cartItem;
             });
-
             const checkIfItemExistInCart = () => {
                 return state.some((item) => item.id === actionPayload.id);
             }
-
             let newCart;
             if (checkIfItemExistInCart()) {
                 newCart = updatedCart()
@@ -45,3 +43,5 @@ export const cartReducer = (state, action) => {
             return state;
     }
 }
+
+export default cartReducer;

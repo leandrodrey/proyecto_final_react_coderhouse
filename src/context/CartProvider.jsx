@@ -1,6 +1,6 @@
 import React, {createContext, useReducer, useState} from 'react';
 import {Alert, Slide, Snackbar} from "@mui/material";
-import {cartInitialState, cartReducer} from "../reducers/cart";
+import cartReducer, {cartInitialState} from "../reducers/cart";
 
 export const CartContext = createContext('')
 
@@ -29,7 +29,7 @@ const CartProvider = ({children}) => {
 
     const getTotalPaymentFromCart = () => {
         return state.reduce((total, item) => total + item.price * item.count, 0);
-    }
+    };
 
     const hideAddedToCartMessage = () => {
         setShowAddedToCartMessage(false);

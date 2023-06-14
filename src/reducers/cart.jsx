@@ -39,9 +39,9 @@ export const cartReducer = (state, action) => {
             return newCart;
         case CART_ACTION_TYPES.REMOVE_ITEM_FROM_CART:
             return state.filter((item) => item.id !== actionPayload);
-        case  CART_ACTION_TYPES.REMOVE_ALL_ITEMS_FROM_CART:
-            saveCartInSessionStorage('cart', cartInitialState);
-            return cartInitialState;
+        case CART_ACTION_TYPES.REMOVE_ALL_ITEMS_FROM_CART:
+            saveCartInSessionStorage('cart', []);
+            return [];
         default:
             return state;
     }

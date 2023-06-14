@@ -21,7 +21,7 @@ const CartProvider = ({children}) => {
     });
 
     const removeAllItemsFromCart = () => dispatch({
-        type: 'REMOVE_ALL_ITEMS_FROM_CART',
+        type: 'REMOVE_ALL_ITEMS_FROM_CART'
     });
 
     const getTotalPaymentFromCart = () => {

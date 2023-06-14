@@ -24,10 +24,9 @@ const CartProvider = ({children}) => {
         type: 'REMOVE_ALL_ITEMS_FROM_CART',
     });
 
-    const getTotalPaymentFromCart = (product) => dispatch({
-        type: 'GET_TOTAL_PAYMENT_FROM_CART',
-        payload: product
-    });
+    const getTotalPaymentFromCart = () => {
+        return state.reduce((total, item) => total + item.price * item.count, 0);
+    }
 
     const hideAddedToCartMessage = () => {
         setShowAddedToCartMessage(false);

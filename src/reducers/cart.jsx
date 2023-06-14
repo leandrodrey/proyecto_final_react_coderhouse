@@ -35,7 +35,6 @@ export const cartReducer = (state, action) => {
                 newCart = [...state, actionPayload]
             }
             saveCartInSessionStorage('cart', newCart);
-            //setShowAddedToCartMessage(true);
             return newCart;
         case CART_ACTION_TYPES.REMOVE_ITEM_FROM_CART:
             return state.filter((item) => item.id !== actionPayload);

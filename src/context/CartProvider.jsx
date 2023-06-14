@@ -10,10 +10,13 @@ const CartProvider = ({children}) => {
 
     const [showAddedToCartMessage, setShowAddedToCartMessage] = useState(false);
 
-    const addCart = (product) => dispatch({
-        type: 'ADD_TO_CART',
-        payload: product
-    });
+    const addCart = (product) => {
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: product,
+        });
+        setShowAddedToCartMessage(true);
+    };
 
     const removeItemFromCart = (productId) => dispatch({
         type: 'REMOVE_ITEM_FROM_CART',

@@ -5,8 +5,7 @@ export const cartInitialState = getCartFromSessionStorage('cart') || [];
 export const CART_ACTION_TYPES = {
     ADD_TO_CART: 'ADD_TO_CART',
     REMOVE_ITEM_FROM_CART: 'REMOVE_ITEM_FROM_CART',
-    REMOVE_ALL_ITEMS_FROM_CART: 'REMOVE_ALL_ITEMS_FROM_CART',
-    GET_TOTAL_PAYMENT_FROM_CART: 'GET_TOTAL_PAYMENT_FROM_CART'
+    REMOVE_ALL_ITEMS_FROM_CART: 'REMOVE_ALL_ITEMS_FROM_CART'
 };
 
 export const cartReducer = (state, action) => {
@@ -39,7 +38,7 @@ export const cartReducer = (state, action) => {
             //setShowAddedToCartMessage(true);
             return newCart;
         case CART_ACTION_TYPES.REMOVE_ITEM_FROM_CART:
-            return state.filter((item) => item.id !== actionPayload.id);
+            return state.filter((item) => item.id !== actionPayload);
         case  CART_ACTION_TYPES.REMOVE_ALL_ITEMS_FROM_CART:
             saveCartInSessionStorage('cart', cartInitialState);
             return cartInitialState;

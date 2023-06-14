@@ -15,9 +15,9 @@ const CartProvider = ({children}) => {
         payload: product
     });
 
-    const removeItemFromCart = (product) => dispatch({
+    const removeItemFromCart = (productId) => dispatch({
         type: 'REMOVE_ITEM_FROM_CART',
-        payload: product
+        payload: productId
     });
 
     const removeAllItemsFromCart = () => dispatch({

@@ -1,6 +1,6 @@
 import React, {createContext, useReducer, useState} from 'react';
 import {Alert, Slide, Snackbar} from "@mui/material";
-import cartReducer, {cartInitialState} from "../reducers/cart";
+import cartReducer, {cartInitialState} from "../reducers/cartReducer";
 
 export const CartContext = createContext('')
 

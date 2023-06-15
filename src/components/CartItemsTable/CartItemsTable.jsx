@@ -14,7 +14,12 @@ import './CartItemTable.css';
 
 const CartItemsTable = () => {
 
-    const {cart, getTotalPaymentFromCart, removeItemFromCart} = useContext(CartContext);
+    const {cart, getTotalPaymentFromCart, dispatch} = useContext(CartContext);
+
+    const removeItemFromCart = (productId) => dispatch({
+        type: 'REMOVE_ITEM_FROM_CART',
+        payload: productId
+    });
 
     return (
         <>

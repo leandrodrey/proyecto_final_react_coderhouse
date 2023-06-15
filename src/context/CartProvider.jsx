@@ -1,6 +1,6 @@
 import React, {createContext, useReducer, useState} from 'react';
-import {Alert, Slide, Snackbar} from "@mui/material";
 import cartReducer, {cartInitialState} from "../reducers/cartReducer";
+import {getTotalPayment} from "../helpers/CartHelper";
 
 export const CartContext = createContext('')
 
@@ -8,41 +8,13 @@ const CartProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(cartReducer, cartInitialState);
 
-    const [showAddedToCartMessage, setShowAddedToCartMessage] = useState(false);
-
-    const addCart = (product) => {
-        dispatch({
-            type: 'ADD_TO_CART',
-            payload: product,
-        });
-        setShowAddedToCartMessage(true);
-    };
-
-    const removeItemFromCart = (productId) => dispatch({
-        type: 'REMOVE_ITEM_FROM_CART',
-        payload: productId
-    });
-
-    const removeAllItemsFromCart = () => dispatch({
-        type: 'REMOVE_ALL_ITEMS_FROM_CART'
-    });
-
     const getTotalPaymentFromCart = () => {
-        return state.reduce((total, item) => total + item.price * item.count, 0);
-    };
-
-    const hideAddedToCartMessage = () => {
-        setShowAddedToCartMessage(false);
+        return getTotalPayment(state);
     };
 
     return (
-        <CartContext.Provider value={{cart:state, addCart, getTotalPaymentFromCart, removeItemFromCart, removeAllItemsFromCart}}>
+        <CartContext.Provider value={{cart:state, dispatch, getTotalPaymentFromCart}}>
             {children}
-            <Snackbar open={showAddedToCartMessage} autoHideDuration={1000} onClose={hideAddedToCartMessage} TransitionComponent={Slide} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
-                <Alert onClose={hideAddedToCartMessage} severity="success">
-                    Product added to cart!
-                </Alert>
-            </Snackbar>
         </CartContext.Provider>
     )
 

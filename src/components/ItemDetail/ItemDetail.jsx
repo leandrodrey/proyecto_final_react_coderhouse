@@ -15,10 +15,17 @@ import {CartContext} from "../../context/CartProvider";
 
 const ItemDetail = ({product}) => {
 
-    const {addCart} = useContext(CartContext);
+    const {dispatch} = useContext(CartContext);
     const navigate = useNavigate();
     const {count, handleSum, handleRest} = useItemCount();
     const {id, title, price, image, description} = product;
+
+    const addCart = (product) => {
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: product,
+        });
+    };
 
     return (
         <>

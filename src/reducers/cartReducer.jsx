@@ -35,7 +35,9 @@ const cartReducer = (state, action) => {
             saveCartInSessionStorage('cart', newCart);
             return newCart;
         case CART_ACTION_TYPES.REMOVE_ITEM_FROM_CART:
-            return state.filter((item) => item.id !== actionPayload);
+            const newCartRemove = state.filter((item) => item.id !== actionPayload)
+            saveCartInSessionStorage('cart', newCartRemove);
+            return newCartRemove;
         case CART_ACTION_TYPES.REMOVE_ALL_ITEMS_FROM_CART:
             saveCartInSessionStorage('cart', []);
             return [];

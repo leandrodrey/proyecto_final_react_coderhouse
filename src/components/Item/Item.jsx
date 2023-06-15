@@ -18,12 +18,19 @@ import {CartContext} from "../../context/CartProvider";
 
 const Item = ({id, title, description, image, price}) => {
 
-    const {addCart} = useContext(CartContext);
+    const {dispatch} = useContext(CartContext);
     const navigate = useNavigate();
     const {count, handleSum, handleRest} = useItemCount();
 
     const shortTitle = title.length > 30 ? title.slice(0, 30) + '...' : title;
     const shortDescription = description.length > 200 ? description.slice(0, 200) + '...' : description;
+
+    const addCart = (product) => {
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: product,
+        });
+    };
 
     return (
         <Card sx={{maxWidth: 400}}>

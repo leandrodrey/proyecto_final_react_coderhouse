@@ -12,19 +12,29 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import useItemCount from "../../hooks/useItemCount";
 import {CartContext} from "../../context/CartProvider";
+import {AlertBarContext} from "../../context/AlertBarProvider";
 
 const ItemDetail = ({product}) => {
 
-    const {dispatch} = useContext(CartContext);
+    const { dispatch: cartDispatch } = useContext(CartContext);
+    const { dispatch: alertDispatch } = useContext(AlertBarContext);
     const navigate = useNavigate();
     const {count, handleSum, handleRest} = useItemCount();
     const {id, title, price, image, description} = product;
 
+    const okMessage = () => {
+        alertDispatch({
+            type: 'SUCCESS',
+            payload: {label: 'Added to Cart successfully!'},
+        });
+    };
+
     const addCart = (product) => {
-        dispatch({
+        cartDispatch({
             type: 'ADD_TO_CART',
             payload: product,
         });
+        okMessage();
     };
 
     return (

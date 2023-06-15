@@ -11,15 +11,27 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Typography from "@mui/material/Typography";
 import {CartContext} from "../../context/CartProvider";
 import './CartItemTable.css';
+import {AlertBarContext} from "../../context/AlertBarProvider";
 
 const CartItemsTable = () => {
 
     const {cart, getTotalPaymentFromCart, dispatch} = useContext(CartContext);
+    const {dispatch: alertDispatch} = useContext(AlertBarContext);
 
-    const removeItemFromCart = (productId) => dispatch({
-        type: 'REMOVE_ITEM_FROM_CART',
-        payload: productId
-    });
+    const deletedMessage = () => {
+        alertDispatch({
+            type: 'ERROR',
+            payload: {label: 'Product/s deleted from Cart!'},
+        });
+    };
+
+    const removeItemFromCart = (productId) => {
+        dispatch({
+            type: 'REMOVE_ITEM_FROM_CART',
+            payload: productId
+        });
+        deletedMessage();
+    }
 
     return (
         <>

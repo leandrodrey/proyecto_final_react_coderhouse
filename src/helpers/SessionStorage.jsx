@@ -7,13 +7,13 @@ export const getCartFromSessionStorage = (key) => {
     if (storedItem) {
         try {
             const parsedCart = JSON.parse(storedItem);
-            if (Array.isArray(parsedCart)) {
+            if (parsedCart && typeof parsedCart === 'object' && 'items' in parsedCart && 'totalPayment' in parsedCart) {
                 return parsedCart;
             } else {
-                console.log('Invalid cart data sessionStorage.');
+                console.log('Invalid cart data in sessionStorage.');
             }
         } catch (error) {
             console.log('Error parsing cart data from sessionStorage:', error);
         }
     }
-}
+};

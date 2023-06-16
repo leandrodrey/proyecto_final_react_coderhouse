@@ -9,7 +9,7 @@ import SendIcon from "@mui/icons-material/Send";
 
 const CartTooltip = () => {
 
-    const {cart, getTotalPaymentFromCart} = useContext(CartContext);
+    const {cart, dispatch} = useContext(CartContext);
     const navigate = useNavigate();
 
     return (
@@ -19,7 +19,7 @@ const CartTooltip = () => {
                     In your cart:
                 </Typography>
                 <ol className="cartList">
-                    {cart.map(item =>
+                    {cart.items.map(item =>
                         <li key={item.id}>
                             <Typography variant="p" color="text.primary">
                                 {item.title}
@@ -31,9 +31,9 @@ const CartTooltip = () => {
                     )}
                 </ol>
                 <Typography variant="h6" gutterBottom color="text.secondary">
-                    Total: ${getTotalPaymentFromCart()}
+                    Total: ${cart.totalPayment}
                 </Typography>
-                <Button className="button_checkout" onClick={()=>navigate(`/cart`)} variant="contained" color="primary" color="success" endIcon={<SendIcon />} disableElevation>Checkout</Button>
+                <Button className="button_checkout" onClick={()=>navigate(`/cart`)} variant="contained" color="success" endIcon={<SendIcon />} disableElevation>Checkout</Button>
             </Paper>
         </>
     )

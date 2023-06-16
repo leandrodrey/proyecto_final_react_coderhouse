@@ -15,7 +15,7 @@ import {AlertBarContext} from "../../context/AlertBarProvider";
 
 const CartItemsTable = () => {
 
-    const {cart, getTotalPaymentFromCart, dispatch} = useContext(CartContext);
+    const {cart, dispatch} = useContext(CartContext);
     const {dispatch: alertDispatch} = useContext(AlertBarContext);
 
     const deletedMessage = () => {
@@ -25,10 +25,10 @@ const CartItemsTable = () => {
         });
     };
 
-    const removeItemFromCart = (productId) => {
+    const removeItemFromCart = (product) => {
         dispatch({
             type: 'REMOVE_ITEM_FROM_CART',
-            payload: productId
+            payload: product
         });
         deletedMessage();
     }
@@ -50,7 +50,7 @@ const CartItemsTable = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {cart.map(item =>
+                        {cart.items.map(item =>
                             <React.Fragment key={item.id}>
                                 <TableRow>
                                     <TableCell className="cell_product">
@@ -66,7 +66,7 @@ const CartItemsTable = () => {
                                         ${item.price * item.count}
                                     </TableCell>
                                     <TableCell align="right">
-                                        <Button color="error" onClick={() => removeItemFromCart(item.id)}><DeleteIcon /></Button>
+                                        <Button color="error" onClick={() => removeItemFromCart(item)}><DeleteIcon /></Button>
                                     </TableCell>
                                 </TableRow>
                             </React.Fragment>
@@ -75,7 +75,7 @@ const CartItemsTable = () => {
                 </Table>
             </TableContainer>
             <Typography className="total_payment" variant="h5" gutterBottom color="text.secondary">
-                Total Order: ${getTotalPaymentFromCart()}
+                Total Order: ${cart.totalPayment}
             </Typography>
         </>
     )

@@ -31,7 +31,7 @@ const CartWidget = () => {
         <React.Fragment>
             <IconButton onClick={()=>navigate(`/cart`)} aria-label="shopping cart button">
                 { isOnCartPage ?
-                    <Badge className="shopping-cart__badge" badgeContent={cart.length} max={999}>
+                    <Badge className="shopping-cart__badge" badgeContent={cart.items.length} max={999}>
                         <ShoppingCartIcon className="shopping-cart__icon" />
                     </Badge>
                 :
@@ -39,13 +39,13 @@ const CartWidget = () => {
                         TransitionComponent={Zoom}
                         TransitionProps={{ timeout: 600 }}
                         title={
-                            (cart.length > 0) &&
+                            (cart.items.length > 0) &&
                             <React.Fragment>
                                 <CartTooltip />
                             </React.Fragment>
                         }
                     >
-                        <Badge className="shopping-cart__badge" badgeContent={cart.length} max={999}>
+                        <Badge className="shopping-cart__badge" badgeContent={cart.items.length} max={999}>
                             <ShoppingCartIcon className="shopping-cart__icon" />
                         </Badge>
                     </HtmlTooltip>

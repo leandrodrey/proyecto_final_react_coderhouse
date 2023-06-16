@@ -15,7 +15,7 @@ import Typography from "@mui/material/Typography";
 const Form = () => {
 
     const {handleSubmit} = useContext(ProductContext);
-    const {cart, getTotalPaymentFromCart, dispatch} = useContext(CartContext);
+    const {cart, dispatch} = useContext(CartContext);
     const {isLoading, stopLoader} = useContext(LoaderContext);
     const [order, setOrder] = useState(null);
 
@@ -26,7 +26,7 @@ const Form = () => {
             lastName: '',
             phone: ''
         },
-        total: getTotalPaymentFromCart(),
+        total: cart.totalPayment,
         items: cart
     });
 

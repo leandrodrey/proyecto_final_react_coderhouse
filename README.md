@@ -96,8 +96,17 @@ npm start
 
 <h2>More Information</h2>
 
+<h4>Previous dev</h4>
+
+* The development come from <a target="_blank" href="https://github.com/leandrodrey/PreEntrega2Rey/tree/NewDev">this branch</a> if you want to see the history.
+ 
+<h4>I'm continuing the development</h4>
+
+* I applied useReducer in <a target="_blank" href="https://github.com/leandrodrey/proyecto_final_react_coderhouse/tree/ApplyUseReducer">this branch</a>
+
+<h4>Useful Links</h4>
+
 <ul>
-  <li>The development come from this branch if you want to see the history: https://github.com/leandrodrey/PreEntrega2Rey/tree/NewDev</li>
   <li>📚 <a target="_blank" href="https://www.coderhouse.com/online/reactjs">Course web page</a></li>
   <li>🖍 <a target="_blank" href="https://drive.google.com/file/d/1G_SRPkYExFpTkmOvbEwj985rIgQ62kx9/view">Study Plan</a></li>
 </ul>

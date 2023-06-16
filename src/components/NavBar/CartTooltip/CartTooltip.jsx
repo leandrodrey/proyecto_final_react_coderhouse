@@ -9,7 +9,7 @@ import SendIcon from "@mui/icons-material/Send";
 
 const CartTooltip = () => {
 
-    const {cart, dispatch} = useContext(CartContext);
+    const {cart} = useContext(CartContext);
     const navigate = useNavigate();
 
     return (

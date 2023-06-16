@@ -94,6 +94,20 @@ npm install
 npm start
 ```
 
+4. Firebase Configuration
+
+<p>This project uses <a target="_blank" href="https://firebase.google.com/">Firebase</a> as the backend platform for features like user authentication and data storage. In order to use Firebase in your project, you need to configure your .env file with the following environment variables:</p>
+
+```bash
+REACT_APP_apiKey=YOUR_API_KEY
+REACT_APP_authDomain=YOUR_AUTH_DOMAIN
+REACT_APP_projectId=YOUR_PROJECT_ID
+REACT_APP_storageBucket=YOUR_STORAGE_BUCKET
+REACT_APP_messagingSenderId=YOUR_MESSAGING_SENDER_ID
+REACT_APP_appId=YOUR_APP_ID
+REACT_APP_measurementId=YOUR_MEASUREMENT_ID
+```
+
 <h2>More Information</h2>
 
 <h4>Previous dev</h4>

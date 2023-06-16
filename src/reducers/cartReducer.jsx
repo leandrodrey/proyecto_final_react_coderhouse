@@ -13,6 +13,10 @@ export const CART_ACTION_TYPES = {
     REMOVE_ALL_ITEMS_FROM_CART: 'REMOVE_ALL_ITEMS_FROM_CART'
 };
 
+const calculateTotalPayment = (cartItems) => {
+    return cartItems.reduce((total, item) => total + item.price * item.count, 0);
+};
+
 const cartReducer = (state, action) => {
 
     const {type: actionType, payload: actionPayload} = action;
@@ -37,21 +41,19 @@ const cartReducer = (state, action) => {
             } else {
                 newCart = [...state.items, actionPayload]
             }
-            const totalPayment = newCart.reduce((total, item) => total + item.price * item.count, 0);
             const finalCart = {
                 ...state,
                 items: newCart,
-                totalPayment: totalPayment
+                totalPayment: calculateTotalPayment(newCart)
             };
             saveCartInSessionStorage('cart', finalCart);
             return finalCart;
         case CART_ACTION_TYPES.REMOVE_ITEM_FROM_CART:
             const newCartRemove = state.items.filter((item) => item.id !== actionPayload.id)
-            const totalPaymentRemove = newCartRemove.reduce((total, item) => total + item.price * item.count, 0);
             const finalCartRemove = {
                 ...state,
                 items: newCartRemove,
-                totalPayment: totalPaymentRemove
+                totalPayment: calculateTotalPayment(newCartRemove)
             };
             saveCartInSessionStorage('cart', finalCartRemove);
             return finalCartRemove;

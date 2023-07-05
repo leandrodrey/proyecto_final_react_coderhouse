@@ -116,7 +116,7 @@ REACT_APP_measurementId=YOUR_MEASUREMENT_ID
  
 <h4>I'm continuing the development</h4>
 
-* I applied useReducer in <a target="_blank" href="https://github.com/leandrodrey/proyecto_final_react_coderhouse/tree/ApplyUseReducer">this branch</a>
+* I applied useReducer in this project once it finished.
 
 <h4>Useful Links</h4>
 

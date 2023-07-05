@@ -15,15 +15,32 @@ import {useNavigate} from "react-router-dom";
 import {Divider} from "@mui/material";
 import useItemCount from "../../hooks/useItemCount";
 import {CartContext} from "../../context/CartProvider";
+import {AlertBarContext} from "../../context/AlertBarProvider";
 
 const Item = ({id, title, description, image, price}) => {
 
-    const {addCart} = useContext(CartContext);
+    const { dispatch: cartDispatch } = useContext(CartContext);
+    const { dispatch: alertDispatch } = useContext(AlertBarContext);
     const navigate = useNavigate();
     const {count, handleSum, handleRest} = useItemCount();
 
     const shortTitle = title.length > 30 ? title.slice(0, 30) + '...' : title;
     const shortDescription = description.length > 200 ? description.slice(0, 200) + '...' : description;
+
+    const okMessage = () => {
+        alertDispatch({
+            type: 'SUCCESS',
+            payload: {label: 'Added to Cart successfully!'},
+        });
+    };
+
+    const addCart = (product) => {
+        cartDispatch({
+            type: 'ADD_TO_CART',
+            payload: product,
+        });
+        okMessage();
+    };
 
     return (
         <Card sx={{maxWidth: 400}}>
